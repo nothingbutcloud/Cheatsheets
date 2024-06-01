@@ -1,3 +1,3 @@
 # Cheatsheets
 
-## [GCloud Cheatsheet](GCloud%20Cheatsheet.md)
+## [GCloud Cheatsheet](GCloud Cheatsheet.md)
