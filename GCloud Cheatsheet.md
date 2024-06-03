@@ -20,6 +20,14 @@ export PROJECT_NUMBER=$(gcloud projects list --filter=projectId:$PROJECT_ID \
   --format="value(projectNumber)")
 ```
 
+# Cloud Storage
+
+Download files to current directory:
+```
+gcloud storage cp gs://path/to/files .
+```
+
+
 # GKE
 
 
