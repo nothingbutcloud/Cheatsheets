@@ -24,7 +24,11 @@ export PROJECT_NUMBER=$(gcloud projects list --filter=projectId:$PROJECT_ID \
 
 Download files to current directory:
 ```
-gcloud storage cp gs://path/to/files .
+gcloud storage cp gs://path/to/file .
+```
+or
+```
+gsutil cp -r gs://path/to/file .
 ```
 
 
