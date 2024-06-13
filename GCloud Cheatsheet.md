@@ -54,6 +54,18 @@ Upload files to Cloud Storage:
 gsutil cp local_file gs://bucket_name
 ```
 
+# Compute Engine
+
+Create a E2 standard virtual machine named `newvm`:
+```
+gcloud compute instances create newvm --zone $ZONE --machine-type e2-standard-2
+```
+
+Create a new persistant disk named `mydisk`:
+```
+gcloud compute disks create mydisk --size=200GB \
+--zone $ZONE
+```
 
 # GKE
 
