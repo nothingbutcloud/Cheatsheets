@@ -1,5 +1,10 @@
 # Environment Setup
 
+Obtain `project_id` of your project:
+```
+gcloud config get-value project
+```
+
 Setup default region and zone:
 ```
 gcloud config set compute/region <region>
