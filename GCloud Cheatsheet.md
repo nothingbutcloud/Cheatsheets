@@ -18,9 +18,9 @@ gcloud config set compute/zone <zone>
 
 Setup common variables:
 ```
-export PROJECT_ID=`gcloud config get-value project`
-export REGION=
-export ZONE_ID=
+export PROJECT_ID=$(gcloud config get-value project)
+export REGION=$(gcloud config get-value compute/region)
+export ZONE=$(gcloud config get-value compute/zone)
 ```
 
 Alernative way:
