@@ -56,9 +56,9 @@ gsutil cp local_file gs://bucket_name
 
 # Compute Engine
 
-Create a E2 standard virtual machine named `newvm`:
+Create a E2 standard virtual machine named `myvm`:
 ```
-gcloud compute instances create newvm --zone $ZONE --machine-type e2-standard-2
+gcloud compute instances create myvm --zone $ZONE --machine-type e2-standard-2
 ```
 
 Create a new persistant disk named `mydisk`:
@@ -66,6 +66,13 @@ Create a new persistant disk named `mydisk`:
 gcloud compute disks create mydisk --size=200GB \
 --zone $ZONE
 ```
+
+Attach disk `mydisk` to Virtual Machine `myvm`:
+```
+gcloud compute instances attach-disk myvm --disk mydisk --zone $ZONE
+```
+
+
 
 # GKE
 
