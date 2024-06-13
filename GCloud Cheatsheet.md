@@ -82,6 +82,10 @@ Attach disk `mydisk` to Virtual Machine `myvm`:
 gcloud compute instances attach-disk myvm --disk mydisk --zone $ZONE
 ```
 
+Connect your VM with ssh:
+```
+gcloud compute ssh myvm --zone $ZONE
+```
 
 
 # GKE
