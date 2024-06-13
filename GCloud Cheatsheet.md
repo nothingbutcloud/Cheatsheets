@@ -5,6 +5,11 @@ Obtain `project_id` of your project:
 gcloud config get-value project
 ```
 
+View details of your project:
+```
+gcloud compute project-info describe --project $(gcloud config get-value project)
+```
+
 Setup default region and zone:
 ```
 gcloud config set compute/region <region>
