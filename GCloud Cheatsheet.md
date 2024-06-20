@@ -103,12 +103,26 @@ Connect your VM with ssh:
 gcloud compute ssh myvm --zone $ZONE
 ```
 
+# Network
+
+Create new network
+```
+gcloud compute networks create mynet --subnet-mode=custom
+```
+
+Create subnet
+```
+gcloud compute networks subnets create labnet-sub \
+   --network mynet \
+   --region $REGION \
+   --range 10.0.0.0/28
+```
+
 
 # GKE
 
 
 # BigQuery
-
 
 
 # AI
