@@ -108,3 +108,12 @@ gcloud compute ssh myvm --zone $ZONE
 
 
 # BigQuery
+
+
+
+# AI
+
+Bulk update cloud storage path of data csv file.
+```
+sed -i -e "s/original_path/${BUCKET}/g" ./data.csv
+```
