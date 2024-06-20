@@ -105,17 +105,26 @@ gcloud compute ssh myvm --zone $ZONE
 
 # Network
 
-Create new network
+Create new network:
 ```
-gcloud compute networks create mynet --subnet-mode=custom
+gcloud compute networks create labnet --subnet-mode=custom
 ```
 
-Create subnet
+Create subnet:
 ```
 gcloud compute networks subnets create labnet-sub \
-   --network mynet \
+   --network labnet \
    --region $REGION \
    --range 10.0.0.0/28
+```
+
+Create firewall rule:
+```
+gcloud compute firewall-rules create labnet-allow-internal \
+	--network=labnet \
+	--action=ALLOW \
+	--rules=icmp,tcp:22 \
+	--source-ranges=0.0.0.0/0
 ```
 
 
