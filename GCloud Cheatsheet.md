@@ -130,6 +130,16 @@ gcloud compute firewall-rules create labnet-allow-internal \
 
 # GKE
 
+Create a GKE cluster:
+```
+gcloud container clusters create --machine-type=e2-medium --zone=$ZONE lab-cluster
+```
+
+Authenticate with the GKE cluster:
+```
+gcloud container clusters get-credentials lab-cluster
+```
+
 
 # BigQuery
 
