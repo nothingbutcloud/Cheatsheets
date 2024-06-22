@@ -150,6 +150,14 @@ Expose the service:
 kubectl expose deployment hello-server --type=LoadBalancer --port 8080
 ```
 
+# Cloud SQL
+
+Connect to your instance:
+```
+gcloud sql connect myinstance --user=root
+```
+
+
 # BigQuery
 
 
