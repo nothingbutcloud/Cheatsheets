@@ -140,6 +140,11 @@ Authenticate with the GKE cluster:
 gcloud container clusters get-credentials lab-cluster
 ```
 
+Create a new Deployment `hello-server` from the sample container image:
+```
+kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
+```
+
 
 # BigQuery
 
