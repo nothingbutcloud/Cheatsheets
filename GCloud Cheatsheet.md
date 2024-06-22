@@ -145,6 +145,10 @@ Create a new Deployment `hello-server` from the sample container image:
 kubectl create deployment hello-server --image=gcr.io/google-samples/hello-app:1.0
 ```
 
+Expose the service:
+```
+kubectl expose deployment hello-server --type=LoadBalancer --port 8080
+```
 
 # BigQuery
 
