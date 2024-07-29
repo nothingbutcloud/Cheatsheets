@@ -160,6 +160,49 @@ gcloud sql connect myinstance --user=root
 
 # BigQuery
 
+Show help:
+```
+bq help <command>
+```
+
+Show the schema of a table:
+```
+bq show <project:public dataset.table>
+```
+
+Run a query, e.g:
+```
+bq query --use_legacy_sql=false \
+'SELECT
+   word,
+   SUM(word_count) AS count
+ FROM
+   `bigquery-public-data`.samples.shakespeare
+ WHERE
+   word LIKE "%raisin%"
+ GROUP BY
+   word'
+```
+
+List all datasets in current project:
+```
+bq ls
+```
+
+Create a new dataset:
+```
+bq mk <dataset>
+```
+
+Create and load a table:
+```
+bq load dataset.table data.csv name:string,gender:string,count:integer
+```
+
+Remove a dataset:
+```
+bq rm -r dataset
+```
 
 # AI
 
