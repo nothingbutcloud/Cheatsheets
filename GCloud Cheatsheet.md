@@ -89,6 +89,19 @@ gsutil cp local_file gs://bucket_name
 
 # Cloud Storage Functions
 
+Enable neccessary APIs:
+```
+gcloud services enable \
+  artifactregistry.googleapis.com \
+  cloudfunctions.googleapis.com \
+  cloudbuild.googleapis.com \
+  eventarc.googleapis.com \
+  run.googleapis.com \
+  logging.googleapis.com \
+  pubsub.googleapis.com
+```
+
+
 Create a Cloud Storage function:
 1. SETUP - Grant the pubsub.publisher IAM role to the Cloud Storage service account.
 ```
