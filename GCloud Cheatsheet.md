@@ -163,6 +163,10 @@ gcloud functions logs read nodejs-storage-function \
   --region $REGION --gen2 --limit=100 --format "value(log)"
 ```
 
+Delete the cloud function:
+```
+gcloud run services delete nodejs-storage-function --region $REGION
+```
 
 # Compute Engine
 
