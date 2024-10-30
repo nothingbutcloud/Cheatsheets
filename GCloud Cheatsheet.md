@@ -69,7 +69,7 @@ curl -s \
 Create a new bucket
 ```
 REGION="us-east4"
-BUCKET="new_bucket_id"
+BUCKET="gs://gcp-cloud-storage-bucket"
 gsutil mb -l $REGION $BUCKET
 ```
 
