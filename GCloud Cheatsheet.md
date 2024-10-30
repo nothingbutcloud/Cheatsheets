@@ -87,6 +87,60 @@ Upload files to Cloud Storage:
 gsutil cp local_file gs://bucket_name
 ```
 
+# Cloud Storage Functions
+
+Create a Cloud Storage function:
+1. SETUP - Grant the pubsub.publisher IAM role to the Cloud Storage service account.
+```
+PROJECT_NUMBER=$(gcloud projects list --filter="project_id:$PROJECT_ID" --format='value(project_number)')
+SERVICE_ACCOUNT=$(gsutil kms serviceaccount -p $PROJECT_NUMBER)
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member serviceAccount:$SERVICE_ACCOUNT \
+  --role roles/pubsub.publisher
+```
+
+2. CREATE - Prepare the cloud function app
+```
+mkdir ~/hello-storage && cd $_
+touch index.js && touch package.json
+```
+Add corresponding contents in your index.js and package.json files, e.g.
+```index.js
+const functions = require('@google-cloud/functions-framework');
+
+functions.cloudEvent('helloStorage', (cloudevent) => {
+  console.log('Cloud Storage event with Node.js in GCF 2nd gen!');
+  console.log(cloudevent);
+});
+```
+```package.json
+{
+  "name": "nodejs-functions-gen2-codelab",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^2.0.0"
+  }
+}
+```
+
+3. DEPLOY - Deploy the function
+```
+gcloud functions deploy nodejs-storage-function \
+  --gen2 \
+  --runtime nodejs18 \
+  --entry-point helloStorage \
+  --source . \
+  --region $REGION \
+  --trigger-bucket $BUCKET \
+  --trigger-location $REGION \
+  --max-instances 1
+```
+
+4. TEST -
+
+
 # Compute Engine
 
 Create a E2 standard virtual machine named `myvm`:
