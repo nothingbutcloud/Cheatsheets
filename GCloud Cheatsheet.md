@@ -66,6 +66,13 @@ curl -s \
 
 # Cloud Storage
 
+Create a new bucket
+```
+REGION="us-east4"
+BUCKET="new_bucket_id"
+gsutil mb -l $REGION $BUCKET
+```
+
 Download files to current directory:
 ```
 gcloud storage cp gs://path/to/file .
