@@ -151,7 +151,17 @@ gcloud functions deploy nodejs-storage-function \
   --max-instances 1
 ```
 
-4. TEST -
+4. TEST
+Test the function by uploading a file to the bucket:
+```
+echo "Hello World" > random.txt
+gsutil cp random.txt $BUCKET/random.txt
+```
+Run the following command. You should see the received CloudEvent in the logs:
+```
+gcloud functions logs read nodejs-storage-function \
+  --region $REGION --gen2 --limit=100 --format "value(log)"
+```
 
 
 # Compute Engine
